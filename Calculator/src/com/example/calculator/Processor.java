@@ -74,16 +74,16 @@ public class Processor {
 			}
 			
 			if(calculation.equals("1+1")){
-				this.calculation = "I thought you were smart ... \n:-)";
+				this.calculation = "Seriously?";
 			}else{
 				this.calculation = result + "";
 			}
 		}catch(NumberFormatException e){
 			this.calculation = "0";
 		}catch(ArrayIndexOutOfBoundsException e){
-			this.calculation = "Need moar operands!";
+			this.calculation = "Moar Operands!";
 		}catch(ArithmeticException e){
-			this.calculation = "To Infinity!\nAnd Beyond!";
+			this.calculation = "°";
 		}
 	}
 }
