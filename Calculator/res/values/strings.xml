@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Calculator</string>
+    <string name="menu_settings">Nothing to see here ...</string>
+    <string name="title_activity_main">Honest Calculator</string>
+    <string name="title_activity_about">Need stalker information?</string>
+
+</resources>
