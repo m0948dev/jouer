@@ -1,5 +1,6 @@
-package com.example.calculator;
+package calculator.ui;
 
+import com.example.calculator.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

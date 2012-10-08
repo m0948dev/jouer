@@ -1,4 +1,4 @@
-package com.example.calculator;
+package calculator.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import calculator.engine.Processor;
+import com.example.calculator.R;
 
 public class Main extends Activity {
 	
@@ -39,13 +41,17 @@ public class Main extends Activity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-    		Intent intent = new Intent(this, About.class);
     		
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.menu_about:
-                startActivity(intent);
+            case R.id.menu_about:            	
+            	startActivity(new Intent(this, About.class));
                 return true;
+            
+            case R.id.menu_settings:
+            	startActivity(new Intent(this, Settings.class));
+            	return true;
+            	
 	        case android.R.id.home:
 	            // This is called when the Home (Up) button is pressed
 	            // in the Action Bar.

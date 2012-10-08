@@ -1,13 +1,19 @@
-package com.example.calculator;
+package calculator.engine;
 
 public class Processor {
 
 	private String calculation;
 	
-	Processor(){
+	public Processor(){
 		this.calculation = "";		
 	}
 
+	/**
+	 * Returns the result of any existing calculation.
+	 * 
+	 * @return The result
+	 */
+	
 	public String getResult() {
 		return calculation;
 	}
@@ -17,13 +23,17 @@ public class Processor {
 	 * Otherwise, "equals" will attempt to calculate the result.
 	 * @param calculation
 	 */
-
 	public void insert(String calculation) {
 		
-		if(calculation.equals("C")){
-			this.calculation = "";
-		}else if (!calculation.equals("=")){
-			this.calculation = this.calculation.concat(calculation);
+		
+		if(calculation.equals("C")){ // If button pressed is clear, then empty the string
+			this.calculation = "";			
+		}else if (!calculation.equals("=")){ // If any other button is pressed (except equals), concatenate it to the calculation
+			if(this.calculation.equals("0")){
+					this.calculation = "";
+			 }
+			 this.calculation = this.calculation.concat(calculation);
+			
 		}else{
 			calculate(this.calculation);
 		}
@@ -33,7 +43,6 @@ public class Processor {
 	 * This method will parse the string into tokens then calculate the desired result
 	 * @param calculation
 	 */
-	
 	private void calculate(String calculation){
 		
 		/* Variable Declaration */
@@ -78,6 +87,7 @@ public class Processor {
 			}else{
 				this.calculation = result + "";
 			}
+			
 		}catch(NumberFormatException e){
 			this.calculation = "0";
 		}catch(ArrayIndexOutOfBoundsException e){
